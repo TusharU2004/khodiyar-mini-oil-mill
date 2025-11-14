@@ -9,10 +9,18 @@ const Header = ({ onMenuClick }) => {
   const [toast, setToast] = useState({ show: false, message: '', type: '' });
   const dropdownRef = useRef(null);
 
-  const handleLogout = () => {
-    localStorage.removeItem('admin');
-    showToast('Logout successful!', 'success');
-    setTimeout(() => router.push('/admin/login'), 1000);
+  const handleLogout = async () => {
+    try {
+      const res = await fetch('/api/admin/logout', { method: 'POST' });
+      if (res.ok) {
+        showToast('Logout successful!', 'success');
+        setTimeout(() => router.push('/admin/login'), 1000);
+      } else {
+        showToast('Logout failed.', 'error');
+      }
+    } catch (error) {
+      showToast('An error occurred during logout.', 'error');
+    }
   };
 
   // ✅ Toast function to show messages

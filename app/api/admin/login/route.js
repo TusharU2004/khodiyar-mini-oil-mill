@@ -1,11 +1,12 @@
 // app/api/admin/login/route.js
 import { createConnection } from '@/lib/db';
 import { NextResponse } from 'next/server';
+import { cookies } from 'next/headers';
 
 export async function POST(req) {
   try {
     const { email, password } = await req.json();
-    console.log('Login request:', email, password);
+    console.log('Login request:', email);
 
     const db = await createConnection();
 
@@ -17,8 +18,6 @@ export async function POST(req) {
        LIMIT 1`,
       [email]
     );
-
-    console.log('Query result:', rows);
 
     if (!rows || rows.length === 0) {
       return NextResponse.json({ message: 'User not found' }, { status: 404 });
@@ -41,14 +40,26 @@ export async function POST(req) {
 
     console.log('✅ Admin login success:', user.email);
 
-    return NextResponse.json({
-      message: 'Login successful',
+    const session = {
       user: {
         id: user.id,
         name: user.username,
         email: user.email,
         role: user.name,
       },
+    };
+
+    // Set session cookie
+    cookies().set('session', JSON.stringify(session), {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      maxAge: 60 * 60 * 24 * 7, // 1 week
+      path: '/',
+    });
+
+    return NextResponse.json({
+      message: 'Login successful',
+      user: session.user,
     });
 
   } catch (err) {
