@@ -829,9 +829,8 @@ body {
 
 .about-content {
     display: grid;
-    grid-template-columns: 2fr 1fr;
     gap: 3rem;
-    align-items: center;
+    text-align: center;
     max-width: 1000px;
     margin: 0 auto;
 }
