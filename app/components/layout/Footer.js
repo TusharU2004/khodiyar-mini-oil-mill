@@ -21,13 +21,13 @@ const Footer = () => {
                 <div className="footer-col">
                     <h4>Address</h4>
                     <p>Khodiyar Oil Mill, Motavadala,<br /> Kalavad, Jamnagar, Gujarat - 361162</p>
-                    <h4>Contact</h4>
+                    {/* <h4>Contact</h4> */}
                     <p>
-                        <a href="tel:7043169204" style={{ color: 'inherit', textDecoration: 'none' }}> 7043169204 (9 AM to 6 PM) </a>
-                        <br />
-                        <a href="mailto:tusharumretiya@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>
+                        {/* <a href="tel:7043169204" style={{ color: 'inherit', textDecoration: 'none' }}> 7043169204 (9 AM to 6 PM) </a>
+                        <br /> */}
+                        {/* <a href="mailto:tusharumretiya@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>
                             tusharumretiya@gmail.com
-                        </a>
+                        </a> */}
                     </p>
                 </div>
             </div>
