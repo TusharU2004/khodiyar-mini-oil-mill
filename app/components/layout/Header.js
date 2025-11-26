@@ -12,6 +12,7 @@ const Header = () => {
 
   return (
     <header className="header">
+        <meta name="google-site-verification" content="TA_A2hccp1wqsocFVT703LExXZzPKE43_3luPEejEwM" />
       <div className="container">
         <nav className="navbar">
           <Link href="/" className="nav-logo" onClick={() => setIsOpen(false)}>
