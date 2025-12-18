@@ -1,29 +1,34 @@
 import Link from "next/link";
 import Image from "next/image";
-import styles from "./Hero.module.css"; // Import the CSS module
+import styles from "./Hero.module.css";
 
 const Hero = () => {
   return (
     <section className={styles.heroSection}>
       <Image
         src="/global/hero-image.png"
-        alt="Pure and Healthy Groundnut Oil"
-        fill={true}
-        priority={true}
+        alt="Pure groundnut oil in Jamnagar by Khodiyar Oil Mill"
+        fill
+        priority
         className={styles.heroBackgroundImage}
       />
-      {/* This div is the dark overlay for better text readability */}
+
+      {/* Overlay */}
       <div className={styles.heroOverlay}></div>
 
       <div className={styles.heroContent}>
-        <h1>Pure & Healthy Groundnut Oil</h1>
+        {/* ✅ ONE H1 (Very Important) */}
+        <h1>Pure & Healthy Groundnut Oil in Jamnagar</h1>
+
         <p>
-          Our groundnut oil is crafted using a traditional steam heating method,
-          ensuring it is 100% pure, chemical-free, and packed with natural
-          nutrition for a healthier life.
+          Khodiyar Oil Mill produces 100% pure groundnut oil using traditional
+          steam heating methods. Chemical-free oil with free home delivery in
+          Jamnagar, Kalavad, and nearby areas.
         </p>
-        <Link href="/product" className={styles.btn}>
-          ➔ ORDER NOW
+
+        {/* ✅ High-conversion CTA */}
+        <Link href="/pure-groundnut-oil" className={styles.btn}>
+          ➔ Order Pure Groundnut Oil
         </Link>
       </div>
     </section>
