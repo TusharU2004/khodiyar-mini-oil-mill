@@ -18,7 +18,7 @@ const Hero = () => {
 
             <div className={styles.heroContent}>
                 {/* ✅ ONE H1 (Very Important) */}
-                <h1>Pure & Healthy Groundnut Oil in Jamnagar</h1>
+                <h1>Pure & Healthy Groundnut Oil</h1>
 
                 <p>
                     Khodiyar Oil Mill produces 100% pure groundnut oil using traditional
@@ -27,7 +27,7 @@ const Hero = () => {
                 </p>
 
                 {/* ✅ High-conversion CTA */}
-                <Link href="/pure-groundnut-oil" className={styles.btn}>
+                <Link href="/product" className={styles.btn}>
                     ➔ Order Pure Groundnut Oil
                 </Link>
             </div>
