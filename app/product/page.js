@@ -15,21 +15,7 @@ const ProductPage = () => {
       <Header />
 
       <main>
-        <section className="product-page-intro">
-          <div className="container">
-
-            {/* ✅ H1 (VERY IMPORTANT) */}
-            <h1>Pure Groundnut Oil Products by Khodiyar Oil Mill</h1>
-
-            <p className="subtitle">
-              Khodiyar Oil Mill offers traditionally made, chemical-free
-              groundnut oil in multiple pack sizes. We deliver across Jamnagar,
-              Kalavad, and nearby areas in Gujarat.
-            </p>
-
-          </div>
-        </section>
-
+        
         {/* ✅ Reused product cards */}
         <Products />
 

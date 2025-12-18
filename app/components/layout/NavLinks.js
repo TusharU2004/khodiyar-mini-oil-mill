@@ -4,16 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const NavLinks = ({ color = "dark" }) => {
-  const pathname = usePathname(); // ✅ get current URL path
+  const pathname = usePathname();
 
-  // Base class for all links
-  const baseClass = color === "light" ? "nav-link nav-link-light" : "nav-link";
+  const baseClass =
+    color === "light" ? "nav-link nav-link-light" : "nav-link";
 
-  // Function to check active path
   const isActive = (path) =>
-    path === "/"
-      ? pathname === "/"
-      : pathname.startsWith(path);
+    path === "/" ? pathname === "/" : pathname.startsWith(path);
 
   return (
     <>
@@ -21,6 +18,8 @@ const NavLinks = ({ color = "dark" }) => {
         <Link
           href="/"
           className={`${baseClass} ${isActive("/") ? "active" : ""}`}
+          aria-current={isActive("/") ? "page" : undefined}
+          title="Khodiyar Oil Mill Home"
         >
           Home
         </Link>
@@ -30,6 +29,8 @@ const NavLinks = ({ color = "dark" }) => {
         <Link
           href="/product"
           className={`${baseClass} ${isActive("/product") ? "active" : ""}`}
+          aria-current={isActive("/product") ? "page" : undefined}
+          title="Pure Groundnut Oil Products"
         >
           Product
         </Link>
@@ -39,6 +40,8 @@ const NavLinks = ({ color = "dark" }) => {
         <Link
           href="/process"
           className={`${baseClass} ${isActive("/process") ? "active" : ""}`}
+          aria-current={isActive("/process") ? "page" : undefined}
+          title="Traditional Groundnut Oil Making Process"
         >
           Our Process
         </Link>
@@ -48,24 +51,19 @@ const NavLinks = ({ color = "dark" }) => {
         <Link
           href="/about"
           className={`${baseClass} ${isActive("/about") ? "active" : ""}`}
+          aria-current={isActive("/about") ? "page" : undefined}
+          title="About Khodiyar Oil Mill"
         >
           About
         </Link>
       </li>
 
-      {/* <li className="nav-item">
-        <Link
-          href="/blogs"
-          className={`${baseClass} ${isActive("/blogs") ? "active" : ""}`}
-        >
-          Blogs
-        </Link>
-      </li> */}
-
       <li className="nav-item">
         <Link
           href="/contact"
           className={`${baseClass} ${isActive("/contact") ? "active" : ""}`}
+          aria-current={isActive("/contact") ? "page" : undefined}
+          title="Contact Khodiyar Oil Mill"
         >
           Contact Us
         </Link>
