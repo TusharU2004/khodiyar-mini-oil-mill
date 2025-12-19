@@ -32,5 +32,11 @@ export default function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    {
+      url: 'https://khodiyar-oil-mill.onrender.com/faq',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    }
   ];
 }

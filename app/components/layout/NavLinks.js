@@ -60,6 +60,17 @@ const NavLinks = ({ color = "dark" }) => {
 
       <li className="nav-item">
         <Link
+          href="/faq"
+          className={`${baseClass} ${isActive("/faq") ? "active" : ""}`}
+          aria-current={isActive("/faq") ? "page" : undefined}
+          title="Frequently Asked Questions"
+        >
+          FAQs
+        </Link>
+      </li>
+
+      <li className="nav-item">
+        <Link
           href="/contact"
           className={`${baseClass} ${isActive("/contact") ? "active" : ""}`}
           aria-current={isActive("/contact") ? "page" : undefined}
