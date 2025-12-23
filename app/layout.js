@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-// ✅ SEO Metadata (VERY IMPORTANT)
+// ✅ SEO Metadata
 export const metadata = {
   title: {
     default: "Pure Groundnut Oil in Jamnagar | Khodiyar Oil Mill",
@@ -58,6 +58,35 @@ export default function RootLayout({ children }) {
       className={`${montserrat.variable} ${playfair.variable}`}
     >
       <body>
+
+        {/* ✅ LocalBusiness Schema (VERY IMPORTANT) */}
+        <Script
+          id="localbusiness-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Khodiyar Oil Mill",
+              "url": "https://khodiyar-oil-mill.onrender.com",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Motavadala",
+                "addressRegion": "Jamnagar",
+                "addressCountry": "IN"
+              },
+              "areaServed": [
+                "Jamnagar",
+                "Rajkot",
+                "Ahmedabad",
+                "Gandhinagar",
+                "Surat"
+              ]
+            }),
+          }}
+        />
+
         {/* ✅ Google Analytics */}
         <Script
           strategy="afterInteractive"
@@ -76,7 +105,7 @@ export default function RootLayout({ children }) {
           }}
         />
 
-        {/* ✅ Font Awesome (Correct Way) */}
+        {/* ✅ Font Awesome */}
         <Script
           src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"
           strategy="afterInteractive"
