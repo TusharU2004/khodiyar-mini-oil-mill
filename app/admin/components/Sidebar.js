@@ -16,6 +16,7 @@ const Sidebar = ({ isOpen }) => {
         { name: 'Sales', path: '/admin/sales', icon: <DollarSign size={20} /> },
         { name: 'Reviews', path: '/admin/review', icon: <DollarSign size={20} /> },
         { name: 'Messages', path: '/admin/messages', icon: <MessageSquare size={20} /> },
+        { name: 'FAQ', path: '/admin/faqs', icon: <BarChart2 size={20} /> },
     ];
 
     return (
